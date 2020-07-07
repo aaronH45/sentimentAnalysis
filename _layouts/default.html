@@ -14,22 +14,20 @@
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
-        <header class="inner">
-          {% if site.github.is_project_page %}
-            <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
-          {% endif %}
+      <header class="inner">
+        <a id="forkme_banner" href="https://github.com/kw143/CS4641Project">View on GitHub</a>
 
-          <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-          <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
-
-          {% if site.show_downloads %}
-            <section id="downloads">
-              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
-            </section>
-          {% endif %}
-        </header>
+        <h1 id="project_title">Sentiment Analysis in Financial News</h1>
+        <h2 id="project_tagline">ML Modeling using CNN and LS</h2>
+      </header>
     </div>
+
+    <section class="outer">
+      <div class="downloads inner">
+        <a class="zip_download_link" href="#">Download .zip</a>
+        <a class="tar_download_link" href="#">Download .tar.gz</a>
+      </div>
+    </section>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
@@ -42,7 +40,7 @@
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        <p class="copyright">Website maintained by Kevin, Aaron, Jonathan, Radhesh, and Sam</a></p>
         {% endif %}
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
