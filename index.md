@@ -27,9 +27,9 @@ Below are the first three entries of the dataset:
 - `Technopolis plans to develop in stages an area of no less than 100,000 square meters in order to host companies working in computer technologies and telecommunications , the statement said . ` 
 - `The international electronic industry company Elcoteq has laid off tens of employees from its Tallinn facility ; contrary to earlier layoffs the company contracted the ranks of its office workers , the daily Postimees reported .`
 
-The graph belos indicates the distribution of labels. Due to the unbalanced nature of the data, it is possible that the results of every model could be affected.
+The graph below indicates the distribution of labels. Due to the unbalanced nature of the data, it is possible that the results of every model could be affected.
 
-<p align="center"><img src="./visualizations/labelpercentages.png" alt="Label Distribution"/></p>
+<p align="center"><img src="./visualizations/LabelPercentages.PNG" alt="Label Distribution"/></p>
 <p align="center">Distribution of labels</p>
 
 ### Multinomial Logistic Regression
