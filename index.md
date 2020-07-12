@@ -56,8 +56,11 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 #### Pre-processing
 
 #### Model
+<p align="center"><img src="./visualizations/CNNmodel.png" alt="CNN Model"/></p>
 
 #### Results
+<p align="center"><img src="./visualizations/CNNloss.png" alt="CNN Loss"/></p>
+<p align="center"><img src="./visualizations/CNNacc.png" alt="CNN Accuracy"/></p>
 
 #### Discussion
 
@@ -66,10 +69,11 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 #### Pre-processing
 
 #### Model
+<p align="center"><img src="./visualizations/LSTMmodel.png" alt="LSTM Model"/></p>
 
 #### Results
-<p align="center"><img src="./visualizations/LSTMloss.PNG" alt="Label Distribution"/></p>
-<p align="center"><img src="./visualizations/LSTMacc.PNG" alt="Label Distribution"/></p>
+<p align="center"><img src="./visualizations/LSTMloss.png" alt="LSTM Loss"/></p>
+<p align="center"><img src="./visualizations/LSTMacc.png" alt="LSTM Accuracy"/></p>
 
 #### Discussion
 
