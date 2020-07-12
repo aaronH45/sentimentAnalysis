@@ -29,6 +29,8 @@ We also tested an LSTM model, which is a type of recurrent neural network (RNN).
 
 ### Results
 
+### Discussion
+
 ## Convolutional Neural Network
 
 ### Pre-processing
@@ -36,6 +38,8 @@ We also tested an LSTM model, which is a type of recurrent neural network (RNN).
 ### Model
 
 ### Results
+
+### Discussion
 
 ## Long Short Term Memory
 
@@ -45,8 +49,14 @@ We also tested an LSTM model, which is a type of recurrent neural network (RNN).
 
 ### Results
 
+### Discussion
+
+## Comparing our models
+
 ## Addendum: State-of-the-art FinBERT model
 
 ### Model
 
 ### Results
+
+### Discussion
