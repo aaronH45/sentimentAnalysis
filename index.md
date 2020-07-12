@@ -68,6 +68,8 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 #### Model
 
 #### Results
+<p align="center"><img src="./visualizations/LSTMloss.PNG" alt="Label Distribution"/></p>
+<p align="center"><img src="./visualizations/LSTMacc.PNG" alt="Label Distribution"/></p>
 
 #### Discussion
 
@@ -80,3 +82,5 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 #### Results
 
 #### Discussion
+
+### References
