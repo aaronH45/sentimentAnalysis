@@ -55,12 +55,19 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 
 ### Pre-processing
 
+After pre-processing, the 
+
 ### Model
+For our model, we used the Keras library with TensorFlow backend. As with our other models, it was written in a Jupyter notebook in Google Colab, which are all available on the github repository.
+
+Due to the maximum length of the word count being only 50, our model consisted of three 1-D convolutional layers with the ReLU activation function and a kernel size of 5. In between the convolutional layers, there are maxpool layers with a pool size of 2. Finally, the data is passed as input to a flatten layer and a fully-connected layer that is 128 dimensions long, before finally being passed to the output layer which 
+
 <p align="center"><img src="./visualizations/CNNmodel.png" alt="CNN Model"/></p>
 
 ### Results
 <p align="center"><img src="./visualizations/CNNloss.png" alt="CNN Loss"/></p>
 <p align="center"><img src="./visualizations/CNNacc.png" alt="CNN Accuracy"/></p>
+Test Accuracy: 69.278353
 
 ### Discussion
 
@@ -74,12 +81,14 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 ### Results
 <p align="center"><img src="./visualizations/LSTMloss.png" alt="LSTM Loss"/></p>
 <p align="center"><img src="./visualizations/LSTMacc.png" alt="LSTM Accuracy"/></p>
+Test Accuracy: 73.814434
 
 ### Discussion
 
 ## Comparing our models
 
 ## Addendum: State-of-the-art FinBERT model
+The state of the art NLP model 
 
 ### Model
 
