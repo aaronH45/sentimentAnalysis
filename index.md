@@ -29,7 +29,7 @@ Below are the first three entries of the dataset:
 
 The graph belos indicates the distribution of labels. Due to the unbalanced nature of the data, it is possible that the results of every model could be affected.
 
-<p align="center"><img src="/visualizations/LabelPercentages.png" alt="Label Distribution"/></p>
+<p align="center"><img src="./visualizations/labelpercentages.png" alt="Label Distribution"/></p>
 <p align="center">Distribution of labels</p>
 
 ### Multinomial Logistic Regression
