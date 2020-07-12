@@ -19,5 +19,34 @@ The remaining models were deep learning models. Convolutional neural networks ar
 
 We also tested an LSTM model, which is a type of recurrent neural network (RNN). Recurrent neural networks are a type of neural network in which information is fed into the network sequentially. For text and NLP, the RNN creates a hidden state based on running the model on a word, and a new hidden state is generated through using the the previous hidden state and the new word to run the model on. LSTM models are a subtype of RNN models which improve upon the RNN by selectively choosing which information from previous states to remember and which information to forget. We used an LSTM model because LSTM models and RNNs are able to capture sequential information, and, under the assumption that text occurs sequentially, these models may best capture previous context information in order to correctly determine sentiment. 
 
-### Dataset and Pre-processing
+### Dataset
 
+## Multinomial Logistic Regression
+
+### Pre-processing
+
+### Model
+
+### Results
+
+## Convolutional Neural Network
+
+### Pre-processing
+
+### Model
+
+### Results
+
+## Long Short Term Memory
+
+### Pre-processing
+
+### Model
+
+### Results
+
+## Addendum: State-of-the-art FinBERT model
+
+### Model
+
+### Results
