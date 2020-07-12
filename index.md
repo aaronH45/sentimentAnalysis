@@ -20,6 +20,17 @@ The remaining models were deep learning models. Convolutional neural networks ar
 We also tested an LSTM model, which is a type of recurrent neural network (RNN). Recurrent neural networks are a type of neural network in which information is fed into the network sequentially. For text and NLP, the RNN creates a hidden state based on running the model on a word, and a new hidden state is generated through using the the previous hidden state and the new word to run the model on. LSTM models are a subtype of RNN models which improve upon the RNN by selectively choosing which information from previous states to remember and which information to forget. We used an LSTM model because LSTM models and RNNs are able to capture sequential information, and, under the assumption that text occurs sequentially, these models may best capture previous context information in order to correctly determine sentiment. 
 
 #### Dataset
+For the financial news dataset, we used the following dataset from kaggle, https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news. The dataset contains 4846 individual datapoints, each one divided between one of three labels - positive, negative, neutral - and the text of the dataset. Note that the length of the text is considerably shorter than that of other sentiment analysis datasets, which may have an effect with the results of our models.
+
+Below are the first three entries of the dataset:
+- `According to Gran , the company has no plans to move all production to Russia , although that is where the company is growing . `
+- `Technopolis plans to develop in stages an area of no less than 100,000 square meters in order to host companies working in computer technologies and telecommunications , the statement said . ` 
+- `The international electronic industry company Elcoteq has laid off tens of employees from its Tallinn facility ; contrary to earlier layoffs the company contracted the ranks of its office workers , the daily Postimees reported .`
+
+The graph belos indicates the distribution of labels. Due to the unbalanced nature of the data, it is possible that the results of every model could be affected.
+
+<p align="center"><img src="./visualizations/LabelPercentages.png" alt="Label Distribution"/></p>
+<p align="center">Distribution of labels</p>
 
 ### Multinomial Logistic Regression
 
