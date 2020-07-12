@@ -1,7 +1,7 @@
 # Sentiment Analysis in Financial News
-## ML Modeling with Multinomial Logistic Regression, CNN, LSTM
+#### ML Modeling with Multinomial Logistic Regression, CNN, LSTM
 
-#### Introduction
+### Introduction
 
 Sentiment analysis is an application of Natural Language Processing in order to quantify subjective information; models extract information from opinion-based statements and determine the sentiment, or emotion, related to the statement. In particular, models usually identify and label positive, negative, and neutral sentiment from statements and documents.
 
@@ -10,12 +10,12 @@ Sentiment analysis is an application of Natural Language Processing in order to 
 
 As with other news headlines, financial news headlines have the same sentiment as that of the information within the news itself. Furthermore, financial news headlines usually closely correlate with investor confidence. Thus, identifying the sentiments of these news headlines can aid predictions on market volatility, trading patterns, and stock prices. Improving the accuracy of models that conduct sentiment analysis on financial news headlines would have many further applications.
 
-#### Purpose
+### Purpose
 The purpose of this project is to build a model that will be able to accurately determine positive, neutral, or negative sentiment in financial news headlines. Our group applies a supervised learning model through multinomial logistic regression in order to achieve the goal. Furthermore, our group applies deep learning models, including convolutional neural networks (CNN) and long short term memory networks (LSTM), to conduct financial sentiment.
 
 As an addendum, we tested the state of the art financial language model on our dataset to see the results and accuracy of a pre-trained model.
 
-#### Choosing our Models
+### Choosing our Models
 We tested a conventional supervised learning model to see what the best accuracy would be for conducting sentiment analysis with models that were not specifically deep-learning models. We chose multinomial logistic regression due to the fewer weights needed to train for the model.
 
 The remaining models were deep learning models. Convolutional neural networks are models that use convolutional layers, which slide a kernel onto the input data. CNNs have had applications in NLP, as word embeddings provide the possibility to use convolution layers to capture semantic information and relations between individual words. Through these convolution layers, partial context can be captured. Thus, we used CNNs as the partial context that could be captured likely would outperform the conventional supervised learning model we tested.
@@ -28,7 +28,7 @@ We also tested an LSTM model, which is a type of recurrent neural network (RNN).
 <p align="center"><img src="./visualizations/RNN.png" alt="Recurrent Neural Network"/></p>
 <p align="center">Source: <a href="https://medium.com/deeplearningbrasilia/deep-learning-recurrent-neural-networks-f9482a24d010">Pedro Torres Perez</a></p>
 
-#### Dataset
+### Dataset
 For the financial news dataset, we used the following dataset from kaggle, https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news. The dataset contains 4846 individual datapoints, each one divided between one of three labels - positive, negative, neutral - and the text of the dataset. Note that the length of the text is considerably shorter than that of other sentiment analysis datasets, which may have an effect with the results of our models.
 
 Below are the first three entries of the dataset:
@@ -41,50 +41,50 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 <p align="center"><img src="./visualizations/LabelPercentages.PNG" alt="Label Distribution"/></p>
 <p align="center">Distribution of labels</p>
 
-### Multinomial Logistic Regression
+## Multinomial Logistic Regression
 
-#### Pre-processing
+### Pre-processing
 
-#### Model
+### Model
 
-#### Results
+### Results
 
-#### Discussion
+### Discussion
 
-### Convolutional Neural Network
+## Convolutional Neural Network
 
-#### Pre-processing
+### Pre-processing
 
-#### Model
+### Model
 <p align="center"><img src="./visualizations/CNNmodel.png" alt="CNN Model"/></p>
 
-#### Results
+### Results
 <p align="center"><img src="./visualizations/CNNloss.png" alt="CNN Loss"/></p>
 <p align="center"><img src="./visualizations/CNNacc.png" alt="CNN Accuracy"/></p>
 
-#### Discussion
+### Discussion
 
-### Long Short Term Memory
+## Long Short Term Memory
 
-#### Pre-processing
+### Pre-processing
 
-#### Model
+### Model
 <p align="center"><img src="./visualizations/LSTMmodel.png" alt="LSTM Model"/></p>
 
-#### Results
+### Results
 <p align="center"><img src="./visualizations/LSTMloss.png" alt="LSTM Loss"/></p>
 <p align="center"><img src="./visualizations/LSTMacc.png" alt="LSTM Accuracy"/></p>
 
-#### Discussion
+### Discussion
 
-### Comparing our models
+## Comparing our models
 
-### Addendum: State-of-the-art FinBERT model
+## Addendum: State-of-the-art FinBERT model
 
-#### Model
+### Model
 
-#### Results
+### Results
 
-#### Discussion
+### Discussion
 
-### References
+## References
