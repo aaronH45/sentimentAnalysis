@@ -29,7 +29,7 @@ We also tested an LSTM model, which is a type of recurrent neural network (RNN).
 <p align="center">Source: <a href="https://medium.com/deeplearningbrasilia/deep-learning-recurrent-neural-networks-f9482a24d010">Pedro Torres Perez</a></p>
 
 ### Dataset
-For the financial news dataset, we used the following dataset from kaggle, https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news. The dataset contains 4846 individual datapoints, each one divided between one of three labels - positive, negative, neutral - and the text of the dataset. Note that the length of the text is considerably shorter than that of other sentiment analysis datasets, which may have an effect with the results of our models.
+For the financial news dataset, we used the Financial Phrasebank dataset, which can be found in a refined form on kaggle, https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news. The dataset contains 4846 individual datapoints, each one divided between one of three labels - positive, negative, neutral - and the text of the dataset. Note that the length of the text is considerably shorter than that of other sentiment analysis datasets, which may have an effect with the results of our models.
 
 Below are the first three entries of the dataset:
 - `According to Gran , the company has no plans to move all production to Russia , although that is where the company is growing . `
