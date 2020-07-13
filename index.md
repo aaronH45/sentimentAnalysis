@@ -45,15 +45,6 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 
 ### Pre-processing
 
-### Model
-
-### Results
-
-### Discussion
-
-## Convolutional Neural Network
-
-<<<<<<< HEAD
 To preprocess our data, we first took care of stemming--removing word endings resulted from different tenses and word plurality.  Then we removed common stopwords from our news data set. Then we used a count vectorizer to vectorize the words in our dataset by their counts: Each news headline will be a row and each word in our vocabulary will be a column; the vocabulary is the set of words left after stemming and stopwords removal.
 
 ![VectorizeExample](visualizations/VectorizeExample.png)
@@ -63,12 +54,15 @@ To preprocess our data, we first took care of stemming--removing word endings re
 
 To create our model, we used 80 percent of our data to train on the logistic regression function provided by sklearn. We ran a 5-fold cross validation algorithm on our model trained with several different regularization level. We were able to achieve the best accuracy results of 70 percent with an inverse regularization value of 0.26.
 
-#### Results
-=======
+### Results
+
+### Discussion
+
+## Convolutional Neural Network
+
 ### Pre-processing
 
 After pre-processing, the 
->>>>>>> 2546b7fe1229ddaf725bb62e99d916369ed1aae9
 
 ### Model
 For our model, we used the Keras library with TensorFlow backend. As with our other models, it was written in a Jupyter notebook in Google Colab, which are all available on the github repository.
