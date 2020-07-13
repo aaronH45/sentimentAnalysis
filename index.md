@@ -133,26 +133,15 @@ The CNN model drastically improved upon the results of the logistic regression, 
 
 Finally, the increase of the LSTM model is not negligible, as we were able to achieve almost a 74% accuracy for our model. Fewer epochs were required to train our LSTM model, but it is worth noting that, due to the temporal nature of RNNs, each epoch took a considerable amount of time longer to train than an individual epoch for the CNN model. The recurrent nature of our LSTM model proved to be more effective in predicting the sentiment of each data point, likely due to the fact that text is sequential and LSTM and RNN models take advantage of the sequential nature of data. In the end, our LSTM model proved to be the best model with the highest accuracy out of all three of our models.
 
-## Addendum: State-of-the-art FinBERT model
-In the past few years, a new neural network architecture was created and has had significant improvements to NLP tasks. The transformer, which uses multihead self-attention to capture information about relationships between features in a sequence, has proven to be extremely effective in capturing contextual information of a sequence, much more so than any other architecture. Furthermore, the introduction of BERT, a type of transformer architecture, has led to improvements in transfer learning and pre-training the model on a corpus of data before finetuning the weights on downstream tasks. Our goal was to load in the pre-trained weights of a transformer model and test the results of the pre-trained model on our entire dataset.
+In the end, our models, especially our deep learning models, proved to have good results that indicate the strength of CNNs and RNNs in sentiment analysis. Based on our results, we can conclude that CNNs can capture relationships between words and that RNNs can capture sequential information successfully.
 
-### Model
-The transformer is a neural network architecture that solely uses attention to capture contextual information between different words in a sequence. The general idea of attention is that the network uses only the most relevant information in some concentrated part of the sequence, rather than using the entire sequence itself to produce an output. Furthermore, self-attention is a type of attention the computes an internal representation of a sequence by relating different positions and words of that sequence to other positions and words. As such, self-attention is extremely effective in capturing contextual and semantic relationships between words.
+### Addendum: Where to go from here?
+Recent advances in sentiment analysis indicate the strength of a new architecture that is able to improve upon sentiment analysis tasks. In the past few years, the transformer, which uses multihead self-attention to capture information about relationships between features in a sequence, has proven to be extremely effective in capturing contextual information of a sequence, much more so than any other architecture. By using self-attention, an internal representation of a sequence is created, which is extremely effective in capturing relationships between words.
 
 <p align="center"><img src="./visualizations/attention.png" alt="Self-attention"/></p>
 <p align="center">Self attention of the sequence being able to capture relationships such as pronoun antecedent relationships</p>
 <p align="center">Source: <a href="https://arxiv.org/pdf/1706.03762.pdf">Vaswani et al.</a></p>
 
-BERT is a transformer architecture that captures bi-directional relationships in text. The conventional way of thinking of text is that it occurs in one direction; a word appears after another word, and thus relationships between such words occur in one direction. The major breakthrough of BERT is the bi-directionality of the model, as text can have contextual relationships in both directions. As such, BERT is a state of the art model with major improvements in almost all NLP tasks.
-
-<p align="center"><img src="./visualizations/BERT.png" alt="Model of BERT"/></p>
-<p align="center">Source: <a href="https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270">Rani Horev</a></p>
-
-FinBERT is model of BERT that is further pre-trained on the financial corpus of text, therefore being specifically tuned torwards NLP tasks in the financial domain. We loaded a pre-trained version of FinBERT from the transformer library. We did not finetune the model because the loaded FinBERT model was already tuned to perform sentiment analysis.
-
-### Results
-The r
-
-### Discussion
+Thus, transfer learning and pre-training a transformer language model before finetuning the model on downstream tasks, such as sentiment analysis, is the topic of most future work and studies.
 
 ## References
