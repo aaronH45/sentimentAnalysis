@@ -47,8 +47,8 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 
 To preprocess our data, we first took care of stemming--removing word endings resulted from different tenses and word plurality.  Then we removed common stopwords from our news data set. Then we used a count vectorizer to vectorize the words in our dataset by their counts: Each news headline will be a row and each word in our vocabulary will be a column; the vocabulary is the set of words left after stemming and stopwords removal.
 
-![VectorizeExample](visualizations/VectorizeExample.png)
--> Figure 1: each row is a headline, each column is a word in our vocabulary, and each entry represent the count of the word in the news headline. <-
+<div align="center"><img src="./visualizations/VectorizeExample.png" alt="Example Vectorization"/></div>
+<div align="center"> Figure 1: each row is a headline, each column is a word in our vocabulary, and each entry represent the count of the word in the news headline. </div>
 
 #### Model
 
