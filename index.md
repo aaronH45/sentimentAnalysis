@@ -91,7 +91,7 @@ In order to improve the accuracy of the model, we altered the kernel size, maxim
 To reduce overfitting, dropout, regularization, and early stopping were added to the model. Dropout with a factor of 0.3 was added before the convolutional layers as it reduced overfitting the most, and another dropout layer was added between the fully-connected layers at the end of the model. L2 and bias regularizers were added to the fully-connected layers, and the accuracy of the model was highest with a factor of 0.04. Due to the short length of each data point, early stopping once validation loss does not decrease in 3 epochs was added.
 
 ### Results
-Our evaluation metric was the accuracy of our sentiment prediction. For the test set, we compared the number of correctly classified financial news headlines with the total number of the test set. Though we did not initially set a target accuracy to achieve, after seeing the accuracy of our multinomial logistic regression model, we hoped to achieve an accuracy over 66%. In the end, we were able to achieve an accuracy of <b>70.103091%<b>.
+Our evaluation metric was the accuracy of our sentiment prediction. For the test set, we compared the number of correctly classified financial news headlines with the total number of the test set. Though we did not initially set a target accuracy to achieve, after seeing the accuracy of our multinomial logistic regression model, we hoped to achieve an accuracy over 66%. In the end, we were able to achieve an accuracy of <b>70.103091%</b>.
 
 Below are visualizations that plot the loss and the accuracy versus epochs during the training of the model.
 <p align="center"><img src="./visualizations/CNNloss.png" alt="CNN Loss"/></p>
@@ -118,7 +118,7 @@ In order to prevent overfitting, a spatial dropout layer was added before the LS
 
 ### Results
 As with our other models, our evaluation metric was the accuracy of our sentiment prediction. We tried to see if we could improve upon the accuracy seen by our CNN model. 
-In the end, we were able to achieve a test accuracy of <b>73.814434%<b>.
+In the end, we were able to achieve a test accuracy of <b>73.814434%</b>.
   
 Below are the visualizations that plot the loss and the accuracy versus epochs during the training of the model.
 <p align="center"><img src="./visualizations/LSTMloss.png" alt="LSTM Loss"/></p>
