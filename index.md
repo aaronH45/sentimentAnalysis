@@ -107,6 +107,9 @@ The state of the art NLP model
 ### Discussion
 
 ## References
+Baker, Malcolm, and Jeffrey Wurgler. "Investor sentiment in the stock market." Journal of economic perspectives 21.2 (2007): 129-152.
+
 Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014). Good debt or bad debt: Detecting semantic orientations in economic texts. Journal of the Association for Information Science and Technology, 65(4), 782-796.
 
+Krishnamoorthy, S. (2018). Sentiment analysis of financial news articles using performance indicators. Knowledge & Information Systems, 56(2), 373–394. https://doi.org/10.1007/s10115-017-1134-1
 
