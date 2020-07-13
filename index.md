@@ -142,6 +142,6 @@ Recent advances in sentiment analysis indicate the strength of a new architectur
 <p align="center">Self attention of the sequence being able to capture relationships such as pronoun antecedent relationships</p>
 <p align="center">Source: <a href="https://arxiv.org/pdf/1706.03762.pdf">Vaswani et al.</a></p>
 
-Thus, transfer learning and pre-training a transformer language model before finetuning the model on downstream tasks, such as sentiment analysis, is the topic of most future work and studies.
+Thus, transfer learning and pre-training a transformer language model before finetuning the model on downstream tasks, such as sentiment analysis, is the topic of most future work and studies. Moreover, financial sentiment analysis has already seen vast improvements, having an accuracy of 86% through the use of transformer architectures and transfer learning.
 
 ## References
