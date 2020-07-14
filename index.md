@@ -175,6 +175,9 @@ Thus, transfer learning and pre-training a transformer language model before fin
 
 ## References
 [1] Krishnamoorthy, S. (2018). Sentiment analysis of financial news articles using performance indicators. Knowledge & Information Systems, 56(2), 373–394. https://doi.org/10.1007/s10115-017-1134-1
+
 [2] W. P. Ramadhan, S. T. M. T. Astri Novianty and S. T. M. T. Casi Setianingsih, "Sentiment analysis using multinomial logistic regression," 2017 International Conference on Control, Electronics, Renewable Energy and Communications (ICCREC), Yogyakarta, 2017, pp. 46-49, doi: 10.1109/ICCEREC.2017.8226700.
+
 [3] Nedjah, N., Santos, I. & de Macedo Mourelle, L. Sentiment analysis using convolutional neural network via word embeddings. Evol. Intel. (2019). https://doi-org.prx.library.gatech.edu/10.1007/s12065-019-00227-4
+
 [4] Baker, Malcolm, and Jeffrey Wurgler. "Investor sentiment in the stock market." Journal of economic perspectives 21.2 (2007): 129-152.
