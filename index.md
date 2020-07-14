@@ -5,7 +5,7 @@
 
 Sentiment analysis is an application of Natural Language Processing in order to quantify subjective information; models extract information from opinion-based statements and determine the sentiment, or emotion, related to the statement [1]. In particular, models usually identify and label positive, negative, and neutral sentiment from statements and documents.
 
-<p align="center" style="max-width: 600px;"><img src="./visualizations/sentiment.jpg" alt="Sentiment Analysis" width="100"/></p>
+<p align="center" style="max-width: 600px;"><img src="./visualizations/sentiment.jpg" alt="Sentiment Analysis"/></p>
 <p align="center">Source: <a href="https://www.kdnuggets.com/2018/03/5-things-sentiment-analysis-classification.html">Symeon Symeonidis</a></p>
 
 As with other news headlines, financial news headlines have the same sentiment as that of the information within the news itself. Furthermore, financial news headlines usually closely correlate with investor confidence [2]. Thus, identifying the sentiments of these news headlines can aid predictions on market volatility, trading patterns, and stock prices. Improving the accuracy of models that conduct sentiment analysis on financial news headlines would have many further applications.
