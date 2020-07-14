@@ -97,8 +97,11 @@ To create our model, we used 80 percent of our data to train on the logistic reg
 
 ### Results
 We compared the number of correctly classified financial news headlines with the total number of the test set. Our model predicted of 33% on the test data using term counts. When the headlines were processed with TFIDF, we saw a slight increase in the accuracy to 36%. Below we charted the 25 most positivley and negativley influential words for each sentiment. 
+<p align="center"><b>Most influential neutral words</b></p>
 <div align="center"><img src="./visualizations/neutral.png" alt="neutral words"/></div>
+<p align="center"><b>Most influential negative words</b></p>
 <div align="center"><img src="./visualizations/negative.png" alt="negative words"/></div>
+<p align="center"><b>Most influential positive words</b></p>
 <div align="center"><img src="./visualizations/positive.png" alt="positive words"/></div>
 
 ### Discussion
