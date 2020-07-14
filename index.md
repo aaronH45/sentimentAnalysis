@@ -72,7 +72,7 @@ Below are some visualizations of the pre-processing steps we took for our logist
 <div align="center"> (Company has the has uniqueness score for the first sentence because it is used twice, but lowest for the second sentence because it has also been used twice in the first sentence compared to the other words which only appear in the second sentence)</div>
 
 #### Model
-To create our model, we used 80 percent of our data to train on the logistic regression function provided by sklearn. We ran a 5-fold cross validation algorithm on our model trained with several different regularization level. We were able to achieve the best accuracy results of 70 percent with an inverse regularization value of 0.26.
+To create our model, we used 80 percent of our data to train on the logistic regression function provided by sklearn. We ran a 5-fold cross validation algorithm on our model trained with several different regularization level. We were able to achieve the best accuracy results of 70 percent with an inverse regularization value of 0.26. 
 
 <div align="center"><img src="./visualizations/accuracy_vs_regularization.png" alt="accuracy_vs_regularization"/></div>
 <div align="center"> Showing how mean cross validation accuracy changes as inverse regularization in logistic regression changes </div>
