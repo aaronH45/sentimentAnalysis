@@ -129,7 +129,7 @@ We speculate that there are several reasons why we achieved such an accuracy and
 ## Long Short Term Memory
 
 ### Pre-processing
-We used the text to sequences method of the keras library to pre-process the dataset. The texts to sequences method converts the text into a sequence of integers, and only the words that are known by the tokenizer is taken into account. 
+The pre-processing needed for the LSTM model was much less compared to the other two models. We used the text to sequences method of the keras library to pre-process the dataset. The texts to sequences method converts the text into a sequence of integers, and only the words that are known by the tokenizer is taken into account. 
 
 For the labels, each label of each data point is treated as a one-hot three-dimensional vector embedding, depending on the value of the label.
 
