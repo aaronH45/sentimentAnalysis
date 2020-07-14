@@ -61,9 +61,6 @@ Below are some visualizations of the pre-processing steps we took for our logist
 
 <div align="center"> Example words being stemmed and stop words being removed </div>
 
-<div align="center"><img src="./visualizations/VectorizeExample.PNG" alt="Example Vectorization"/></div>
-<div align="center"> Each row is a headline, each column is a word in our vocabulary, and each entry represent the count of the word in the news headline. </div>
-
 #### TF-IDF Matrix
 
 |          | accord | area | compani | comput | develop | gran | grow |
