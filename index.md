@@ -5,7 +5,7 @@
 
 Sentiment analysis is an application of Natural Language Processing in order to quantify subjective information; models extract information from opinion-based statements and determine the sentiment, or emotion, related to the statement [1]. In particular, models usually identify and label positive, negative, and neutral sentiment from statements and documents.
 
-<p align="center" style="max-width: 600px;"><img src="./visualizations/sentiment.jpg" alt="Sentiment Analysis"/></p>
+<p align="center" width="640"><img src="./visualizations/sentiment.jpg" alt="Sentiment Analysis"/></p>
 <p align="center">Source: <a href="https://www.kdnuggets.com/2018/03/5-things-sentiment-analysis-classification.html">Symeon Symeonidis</a></p>
 
 As with other news headlines, financial news headlines have the same sentiment as that of the information within the news itself. Furthermore, financial news headlines usually closely correlate with investor confidence [2]. Thus, identifying the sentiments of these news headlines can aid predictions on market volatility, trading patterns, and stock prices. Improving the accuracy of models that conduct sentiment analysis on financial news headlines would have many further applications.
@@ -18,12 +18,12 @@ We tested a conventional supervised learning model to see what the best accuracy
 
 The remaining models were deep learning models. Convolutional neural networks are models that use convolutional layers, which slide a kernel onto the input data. CNNs have had applications in NLP, as word embeddings provide the possibility to use convolution layers to capture semantic information and relations between individual words [3]. Through these convolution layers, partial context can be captured. Thus, we used CNNs as the partial context that could be captured likely would outperform the conventional supervised learning model we tested [4].
 
-<p align="center"><img src="./visualizations/CNN.jpeg" alt="Convolutional Neural Network"/></p>
+<p align="center" width="640"><img src="./visualizations/CNN.jpeg" alt="Convolutional Neural Network"/></p>
 <p align="center">Source: <a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53">Sumit Saha</a></p>
 
 We also tested an LSTM model, which is a type of recurrent neural network (RNN). Recurrent neural networks are a type of neural network in which information is fed into the network sequentially. For text and NLP, the RNN creates a hidden state based on running the model on a word, and a new hidden state is generated through using the the previous hidden state and the new word to run the model on. LSTM models are a subtype of RNN models which improve upon the RNN by selectively choosing which information from previous states to remember and which information to forget. We used an LSTM model because LSTM models and RNNs are able to capture sequential information, and, under the assumption that text occurs sequentially, these models may best capture previous context information in order to correctly determine sentiment. 
 
-<p align="center"><img src="./visualizations/RNN.png" alt="Recurrent Neural Network"/></p>
+<p align="center" width="640"><img src="./visualizations/RNN.png" alt="Recurrent Neural Network"/></p>
 <p align="center">Source: <a href="https://medium.com/deeplearningbrasilia/deep-learning-recurrent-neural-networks-f9482a24d010">Pedro Torres Perez</a></p>
 
 ### Dataset
@@ -81,11 +81,11 @@ To create our model, we used the logistic regression function provided by the sk
 We compared the number of correctly classified financial news headlines with the total number of the test set. Our model predicted **37%** of the test headlines correctly. When the headlines were processed with TFIDF, we saw a slight decrease in the accuracy to 36%. Below we charted the 25 most positivley and negativley influential words for each sentiment. 
 
 <p align="center"><b>Most influential neutral words</b></p>
-<div align="center"><img src="./visualizations/neutral.png" alt="neutral words"/></div>
+<div align="center" width="640"><img src="./visualizations/neutral.png" alt="neutral words"/></div>
 <p align="center"><b>Most influential negative words</b></p>
-<div align="center"><img src="./visualizations/negative.png" alt="negative words"/></div>
+<div align="center" width="640"><img src="./visualizations/negative.png" alt="negative words"/></div>
 <p align="center"><b>Most influential positive words</b></p>
-<div align="center"><img src="./visualizations/positive.png" alt="positive words"/></div>
+<div align="center" width="640"><img src="./visualizations/positive.png" alt="positive words"/></div>
 
 ### Discussion
 We believe the relatively low accuracy of the logistic regression model can be attributed to the relatively low sample size and the majority of the dataset being classified as neutral. In particular, the logistic regression model may have suffered as the training set produced a vocab of only 2340 words, meaning many of the words that appeared in the test set headlines may have been unknown to the model and therefore, was lost information. The TFIDF pre-processing may have had a negligible effect due to the nature of the financial text corpus; in general, financial text may have different frequencies for the occurrences of different words and thus would not have much impact on the dataset. Finally, the bag-of-words model likely captured insufficient information regarding the relationships and semantic meaning of text, leading to a low overall accuracy.
@@ -167,7 +167,7 @@ In the end, our models, especially our deep learning models, proved to have good
 ### Addendum: Where to go from here?
 Recent advances in sentiment analysis indicate the strength of a new architecture that is able to improve upon sentiment analysis tasks. In the past few years, the transformer, which uses multihead self-attention to capture information about relationships between features in a sequence, has proven to be extremely effective in capturing contextual information of a sequence, much more so than any other architecture. By using self-attention, an internal representation of a sequence is created, which is extremely effective in capturing relationships between words.
 
-<p align="center"><img src="./visualizations/attention.png" alt="Self-attention"/></p>
+<p align="center" width="640"><img src="./visualizations/attention.png" alt="Self-attention"/></p>
 <p align="center">Self attention of the sequence being able to capture relationships such as pronoun antecedent relationships</p>
 <p align="center">Source: <a href="https://arxiv.org/pdf/1706.03762.pdf">Vaswani et al.</a></p>
 
