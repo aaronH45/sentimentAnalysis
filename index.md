@@ -98,7 +98,11 @@ For pre-processing the text of the dataset, we first removed the punctuation fro
 For the labels, each label of each data point is treated as a one-hot three-dimensional vector embedding, depending on the value of the label.
 
 #### Word2vec
-Afterwards, we used the common word to vector embedding, word2vec. Word2vec is a type of word-vector embedding developed by Google, which is trained on a dataset of Google News. The general word2vec algorithm takes a word and outuputs the probability of every word in the corpus to appear in the input word's surroundings. As a result, the algorithm allows for words in similar contexts to have word vectors with high cosine similarity, as the word vectors will have similar probabilities. As a result, word2vec is able to capture semantic meaning of words, and serve as a viable input to our CNN model [5].
+Afterwards, we used the common word to vector embedding, word2vec. Word2vec is a type of word-vector embedding developed by Google, which is trained on a dataset of Google News. The general word2vec algorithm takes a word as input and outuputs the probability of every word in the corpus to appear in the input word's surroundings. As a result, the algorithm allows for words in similar contexts to have word vectors with high cosine similarity, as the word vectors will have similar probabilities. As a result, word2vec is able to capture semantic meaning of words, and serve as a viable input to our CNN model [5].
+
+<p align="center"><img src="./visualizations/word2vec.png" alt="skip-gram word2vec"/></p>
+<p align="center">Word2vec algorithm</p>
+<p align="center">Source: <a href="https://petamind.com/word2vec-with-gensim-a-simple-word-embedding-example/">petamind</a></p>
 
 We used the pre-trained word2vec model to pre-process our dataset. The word to vector embedding maps every word to a 300-dimensional vector. The maximum length of a sequence in our dataset is 47, so we set the maximum length of our input to be 50. For each word in a datapoint, if a mapping in word2vec existed, we mapped it and appended it to our input; if such a mapping did not exist, we randomized the entries in our input. Finally, each datapoint was padded with 0's to ensure that the maximum sequence length is 50. Thus, the size of the input for every datapoint is 50x300.
 
