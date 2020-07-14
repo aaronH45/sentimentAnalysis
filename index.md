@@ -78,7 +78,7 @@ To create our model, we used 80 percent of our data to train on the logistic reg
 <div align="center"> Showing how mean cross validation accuracy changes as inverse regularization in logistic regression changes </div>
 
 ### Results
-We compared the number of correctly classified financial news headlines with the total number of the test set. Our model predicted of 33% on the test data using term counts. When the headlines were processed with TFIDF, we saw a slight increase in the accuracy to 36%. Below we charted the 25 most positivley and negativley influential words for each sentiment. 
+We compared the number of correctly classified financial news headlines with the total number of the test set. Our model predicted 37% of the test headlines correctly. When the headlines were processed with TFIDF, we saw a slight decrease in the accuracy to 36%. Below we charted the 25 most positivley and negativley influential words for each sentiment. 
 <p align="center"><b>Most influential neutral words</b></p>
 <div align="center"><img src="./visualizations/neutral.png" alt="neutral words"/></div>
 <p align="center"><b>Most influential negative words</b></p>
@@ -87,7 +87,7 @@ We compared the number of correctly classified financial news headlines with the
 <div align="center"><img src="./visualizations/positive.png" alt="positive words"/></div>
 
 ### Discussion
-We believe the relativley low accuracy of the logistic regression model can be attributed to a relativley low sample size and the majority of the dataset being classified neutral. In particulaur, the logisitc regressions may have suffered as the training set produced a vocab of only 1605 words meaning many of the words that appeared in the test set headlines may have been unknown to the model and therefore lost information.
+We believe the relativley low accuracy of the logistic regression model can be attributed to a relativley low sample size and the majority of the dataset being classified neutral. In particulaur, the logisitc regressions may have suffered as the training set produced a vocab of only 2340 words meaning many of the words that appeared in the test set headlines may have been unknown to the model and therefore lost information.
 
 ## Convolutional Neural Network
 
