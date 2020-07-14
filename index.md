@@ -71,12 +71,66 @@ For pre-processing the text of the dataset, we first removed the punctuation fro
 
 For the labels, each label of each data point is treated as a one-hot three-dimensional vector embedding, depending on the value of the label.
 
+To explain preprocessing, the first two sentences in the dataset are used:
+1. According to Gran, the company has no plans to move all production to Russia, although that is where the company is growing.
+2. Technopolis plans to develop in stages an area of no less than 100,000 square meters in order to host companies working in computer technologies and telecommunications, the statement said.
+
+#### Porter Stemme and Count Vectorizer
+
+|Before|Porter Stemmer|After|Count Vectorizer|Key|
+|----------|:--------:|------|:------:|------|
+|According|⭢|accord|⭢|784|
+|to|⭢|to|⭢|N/A|
+|Gran|⭢|gran|⭢|3211|
+|the|⭢|the|⭢|N/A|
+|company|⭢|compani|⭢|1826|
+|has|⭢|ha|⭢|3270|
+|no|⭢|no|⭢|N/A|
+|plans|⭢|plan|⭢|5333|
+|to|⭢|accord|⭢|N/A|
+|move|⭢|move|⭢|N/A|
+|all|⭢|all|⭢|N/A|
+|production|⭢|product|⭢|5508 |
+|to|⭢|to|⭢|N/A|
+|Russia|⭢|russia|⭢|6000|
+|although|⭢|although|⭢|N/A|
+|that|⭢|that|⭢|N/A|
+|is|⭢|is|⭢|N/A|
+|where|⭢|where|⭢|N/A|
+|the|⭢|the|⭢|N/A|
+|company|⭢|compani|⭢|1826|
+|is|⭢|is|⭢|N/A|
+|growing|⭢|grow|⭢|3244|
+
 #### Word2vec
 Afterwards, we used the common word to vector embedding, word2vec. Word2vec is a type of word-vector embedding developed by Google, which is trained on a dataset of Google News. The general word2vec algorithm takes a word and outuputs the probability of every word in the corpus to appear in the input word's surroundings. As a result, the algorithm allows for words in similar contexts to have word vectors with high cosine similarity, as the word vectors will have similar probabilities. As a result, word2vec is able to capture semantic meaning of words, and serve as a viable input to our CNN model.
 
 We used the pre-trained word2vec model to pre-process our dataset. The word to vector embedding maps every word to a 300-dimensional vector. The maximum length of a sequence in our dataset is 47, so we set the maximum length of our input to be 50. For each word in a datapoint, if a mapping in word2vec existed, we mapped it and appended it to our input; if such a mapping did not exist, we randomized the entries in our input. Finally, each datapoint was padded with 0's to ensure that the maximum sequence length is 50. Thus, the size of the input for every datapoint is 50x300.
 
 After pre-processing, the dataset becomes an input of Nx50x300, in which N is the number of datapoints of our dataset. We split the dataset into 80% training, 10% validation, 10% testing.
+
+#### CO-O Matrix
+
+|          | Develop  | Area | Order | Host | Square | Computer | Statement | Said | Company | Production |
+|----------|----------|------|-------|------|--------|----------|-----------|------|---------|------------|
+|Develop   | 1        | 1    | 0     | 0    | 0      | 0        | 0         | 0    | 0       | 0          |
+|Area      | 1        | 1    | 0     | 0    | 0      | 0        | 0         | 0    | 0       | 0          |
+|Order     | 0        | 0    | 1     | 1    | 1      | 0        | 0         | 0    | 0       | 0          |
+|Host      | 0        | 0    | 1     | 1    | 1      | 1        | 0         | 0    | 0       | 0          |
+|Square    | 0        | 0    | 1     | 0    | 1      | 0        | 0         | 0    | 0       | 0          |
+|Computer  | 0        | 0    | 0     | 1    | 0      | 1        | 0         | 0    | 0       | 0          |
+|Statement | 0        | 0    | 0     | 0    | 0      | 0        | 1         | 1    | 0       | 0          |
+|Said      | 0        | 0    | 0     | 0    | 0      | 0        | 1         | 1    | 0       | 0          |
+|Company   | 0        | 0    | 0     | 0    | 0      | 0        | 0         | 0    | 2       | 0          |
+|Production| 0        | 0    | 0     | 0    | 0      | 0        | 0         | 0    | 0       | 1          |
+
+
+#### TF-IDF Matrix
+
+|          | 000  | 100 | accord | area | compani | comput | develop | gran | grow | ha | host | meter | order | plan | product | russia | said | squar | stage | statement | technolog | technopoli | telecommun | work | 
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Sentence 1| 0  | 0 | 0.342369 | 0 | 0.48719673 | 0 | 0 | 0.342369 | 0.342369 | 0.342369 | 0 | 0 | 0 | 0.24359836 | 0.342369 | 0.342369 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  
+|Sentence 2| 0.24244659  | 0.24244659 | 0 | 0.24244659 | 0.17250275 | 0.24244659 | 0.24244659 | 0 | 0 | 0 | 0.24244659 | 0.24244659 | 0.24244659 | 0.17250275 | 0 | 0 | 0.24244659  | 0.24244659  | 0.24244659 | 0.24244659  | 0.24244659  | 0.24244659  | 0.24244659 | 0.24244659  |  
 
 ### Model
 For our model, we used the Keras library with TensorFlow backend. As with our other models, it was written in a Jupyter notebook in Google Colab, which are all available on the github repository.
