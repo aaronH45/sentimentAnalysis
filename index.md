@@ -5,7 +5,11 @@
 
 Sentiment analysis is an application of Natural Language Processing in order to quantify subjective information; models extract information from opinion-based statements and determine the sentiment, or emotion, related to the statement [1]. In particular, models usually identify and label positive, negative, and neutral sentiment from statements and documents.
 
+<<<<<<< HEAD
 <p align="center" style="max-width: 600px;"><img src="./visualizations/sentiment.jpg" alt="Sentiment Analysis"/></p>
+=======
+<p align="center"><img src="./visualizations/sentiment.jpg" alt="Sentiment Analysis"/></p>
+>>>>>>> dc05dda62198309385e8c549c64d7c2740ae4747
 <p align="center">Source: <a href="https://www.kdnuggets.com/2018/03/5-things-sentiment-analysis-classification.html">Symeon Symeonidis</a></p>
 
 As with other news headlines, financial news headlines have the same sentiment as that of the information within the news itself. Furthermore, financial news headlines usually closely correlate with investor confidence [2]. Thus, identifying the sentiments of these news headlines can aid predictions on market volatility, trading patterns, and stock prices. Improving the accuracy of models that conduct sentiment analysis on financial news headlines would have many further applications.
@@ -78,7 +82,7 @@ To create our model, we used the logistic regression function provided by the sk
 <div align="center"> Showing how mean cross validation accuracy changes as inverse regularization in logistic regression changes </div>
 
 ### Results
-We compared the number of correctly classified financial news headlines with the total number of the test set. Our model predicted 37% of the test headlines correctly. When the headlines were processed with TFIDF, we saw a slight decrease in the accuracy to 36%. Below we charted the 25 most positivley and negativley influential words for each sentiment. 
+We compared the number of correctly classified financial news headlines with the total number of the test set. Our model predicted **37%** of the test headlines correctly. When the headlines were processed with TFIDF, we saw a slight decrease in the accuracy to 36%. Below we charted the 25 most positivley and negativley influential words for each sentiment. 
 
 <p align="center"><b>Most influential neutral words</b></p>
 <div align="center"><img src="./visualizations/neutral.png" alt="neutral words"/></div>
@@ -117,7 +121,7 @@ In order to improve the accuracy of the model, we altered the kernel size, maxim
 To reduce overfitting, dropout, regularization, and early stopping were added to the model. Dropout with a factor of 0.3 was added before the convolutional layers as it reduced overfitting the most, and another dropout layer was added between the fully-connected layers at the end of the model. L2 and bias regularizers were added to the fully-connected layers, and the accuracy of the model was highest with a factor of 0.04. Due to the short length of each data point, early stopping occured once the validation loss did not decrease in 3 epochs.
 
 ### Results
-Our evaluation metric was the accuracy of our sentiment prediction. For the test set, we compared the number of correctly classified financial news headlines with the total number of the test set. Though we did not initially set a target accuracy to achieve, after seeing the accuracy of our multinomial logistic regression model, we hoped to achieve an accuracy over 66%. In the end, we were able to achieve an accuracy of <b>70.103091%</b>.
+Our evaluation metric was the accuracy of our sentiment prediction. For the test set, we compared the number of correctly classified financial news headlines with the total number of the test set. Though we did not initially set a target accuracy to achieve, after seeing the accuracy of our multinomial logistic regression model, we hoped to achieve an accuracy over 66%. In the end, we were able to achieve an accuracy of **70.103091%**.
 
 Below are visualizations that plot the loss and the accuracy versus epochs during the training of the model.
 <p align="center"><img src="./visualizations/CNNloss.png" alt="CNN Loss"/></p>
@@ -144,7 +148,7 @@ In order to prevent overfitting, a spatial dropout layer was added before the LS
 
 ### Results
 As with our other models, our evaluation metric was the accuracy of our sentiment prediction. We tried to see if we could improve upon the accuracy seen by our CNN model. 
-In the end, we were able to achieve a test accuracy of <b>73.814434%</b>.
+In the end, we were able to achieve a test accuracy of **73.814434%**.
   
 Below are the visualizations that plot the loss and the accuracy versus epochs during the training of the model.
 <p align="center"><img src="./visualizations/LSTMloss.png" alt="LSTM Loss"/></p>
@@ -155,6 +159,8 @@ The LSTM model consistently had above a 72% accuracy, indicating the effectivene
 
 ## Conclusion / Comparing our models
 If the labels were perfectly distributed, then randomly guessing the correct sentiment would be a baseline of 33%. However, due to the imbalance of labels in our dataset, it is likely that randomly guessing would provide a different accuracy. Regardless, our multinomial logistic regression model performed just slightly better than randomly guessing in a perfectly distributed dataset, at an accuracy of around 36%. The model did not generalize well, and overall, using a supervised model that was not also a deep-learning model provided the worst results in our dataset. We conclude that simply using a bag-of-words model and implementing the TFIDF pre-processing algorithm is not enough to capture semantic information and contextual relationships that can successfully and consistently determine the correct label for a sequence of text.
+
+<p align="center"><img src="./visualizations/Compare.PNG" alt="Label Distribution"/></p>
 
 The CNN model drastically improved upon the results of the logistic regression, as we were able to achieve above a 70% accuracy for our model. The model converged fast and trained fast, requiring only about 12 epochs on average to train. The model generalized well, and we can reasonably conclude that the convolutions over the word embeddings of our model proved to be able to capture contextual and semantic information that aided in predicting the sentiment of each data point. Though not perfect, the convolutions were able to retain more information than that of our supervised logistic regression model.
 
