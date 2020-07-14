@@ -87,7 +87,7 @@ We compared the number of correctly classified financial news headlines with the
 <div align="center"><img src="./visualizations/positive.png" alt="positive words"/></div>
 
 ### Discussion
-We believe the relativley low accuracy of the logistic regression model can be attributed to a relativley low sample size and the majority of the dataset being classified neutral. In particulaur, the logisitc regressions may have suffered as the training set produced a vocab of only 2340 words meaning many of the words that appeared in the test set headlines may have been unknown to the model and therefore lost information.
+We believe the relatively low accuracy of the logistic regression model can be attributed to the relatively low sample size and the majority of the dataset being classified as neutral. In particular, the logistic regression model may have suffered as the training set produced a vocab of only 2340 words, meaning many of the words that appeared in the test set headlines may have been unknown to the model and therefore, was lost information.
 
 ## Convolutional Neural Network
 
@@ -113,7 +113,7 @@ In order to improve the accuracy of the model, we altered the kernel size, maxim
 <p align="center"><img src="./visualizations/CNNmodel.png" alt="CNN Model"/></p>
 <p align="center">Our CNN model</p>
 
-To reduce overfitting, dropout, regularization, and early stopping were added to the model. Dropout with a factor of 0.3 was added before the convolutional layers as it reduced overfitting the most, and another dropout layer was added between the fully-connected layers at the end of the model. L2 and bias regularizers were added to the fully-connected layers, and the accuracy of the model was highest with a factor of 0.04. Due to the short length of each data point, early stopping once validation loss does not decrease in 3 epochs was added.
+To reduce overfitting, dropout, regularization, and early stopping were added to the model. Dropout with a factor of 0.3 was added before the convolutional layers as it reduced overfitting the most, and another dropout layer was added between the fully-connected layers at the end of the model. L2 and bias regularizers were added to the fully-connected layers, and the accuracy of the model was highest with a factor of 0.04. Due to the short length of each data point, early stopping occured once the validation loss did not decrease in 3 epochs.
 
 ### Results
 Our evaluation metric was the accuracy of our sentiment prediction. For the test set, we compared the number of correctly classified financial news headlines with the total number of the test set. Though we did not initially set a target accuracy to achieve, after seeing the accuracy of our multinomial logistic regression model, we hoped to achieve an accuracy over 66%. In the end, we were able to achieve an accuracy of <b>70.103091%</b>.
