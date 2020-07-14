@@ -69,6 +69,7 @@ Below are some visualizations of the pre-processing steps we took for our logist
 |Sentence 2|  0 | 0.24244659 | **0.17250275** | 0.24244659 | 0.24244659 | 0 | 0 |
 
 <div align="center"> TF-IDF matrix weighting the first few words of the corpus in our dataset</div>
+<div align="center"> (Company has the has uniqueness score for the first sentence because it is used twice, but lowest for the second sentence because it has also been used twice in the first sentence compared to the other words which only appear in the second sentence.)</div>
 
 #### Model
 To create our model, we used 80 percent of our data to train on the logistic regression function provided by sklearn. We ran a 5-fold cross validation algorithm on our model trained with several different regularization level. We were able to achieve the best accuracy results of 70 percent with an inverse regularization value of 0.26.
