@@ -11,9 +11,7 @@ Sentiment analysis is an application of Natural Language Processing in order to 
 As with other news headlines, financial news headlines have the same sentiment as that of the information within the news itself. Furthermore, financial news headlines usually closely correlate with investor confidence. Thus, identifying the sentiments of these news headlines can aid predictions on market volatility, trading patterns, and stock prices. Improving the accuracy of models that conduct sentiment analysis on financial news headlines would have many further applications.
 
 ### Purpose
-The purpose of this project is to build a model that will be able to accurately determine positive, neutral, or negative sentiment in financial news headlines. Our group applies a supervised learning model through multinomial logistic regression in order to achieve the goal. Furthermore, our group applies deep learning models, including convolutional neural networks (CNN) and long short term memory networks (LSTM), to conduct financial sentiment.
-
-As an addendum, we tested the state of the art financial language model on our dataset to see the results and accuracy of a pre-trained model.
+The purpose of this project is to build a model that will be able to accurately determine positive, neutral, or negative sentiment in financial news headlines. Our group applies a supervised learning model through multinomial logistic regression in order to achieve the goal. Furthermore, our group applies deep learning models, including convolutional neural networks (CNN) and long short term memory networks (LSTM), to conduct financial sentiment. We then compare the results of all three models and conclude what the strengths of each model are.
 
 ### Choosing our Models
 We tested a conventional supervised learning model to see what the best accuracy would be for conducting sentiment analysis with models that were not specifically deep-learning models. We chose multinomial logistic regression due to the fewer weights needed to train for the model.
@@ -47,8 +45,9 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 ## Multinomial Logistic Regression
 
 ### Pre-processing
+To preprocess our data, we tokenized and stemmed each headline. We treated each word in the dataset as a token, and we used the common Porter Stemmer to stem the words, ignoring any inflections that the word may have. Thus, the headlines are converted into lists of root words, with tenses and plurality removed for consistency. Afterwards, we removed common stopwords from our data using a preset list of English stopwords. We applied the common bag-of-words model and used a count vectorizer to vectorize the words in our training dataset by the number of times each word appeared. We used a minimum frequency of 5, so the model ignored words that appeared less than 5 times throughout all the training headlines. In addition to word counts, we processed the headlines using a term frequency- inverse document frequency (TFIDF) matrix. This process assigns each word in a headline a frequency proportional to number of times it appears in a headline and the number of headlines the word appears in. TFIDF reflects the importance of a word to the document and the corpus of the dataset as the inverse relationship allows for common words present in all documents to not have much information. Comparatively, a word with high frequency in one headline but relatively low frequency in the other headlines would provide more information regarding the sentiment of that headline.
 
-To preprocess our data, we tokenized and stemmed each headline. This process split the headlines into lists of root words, removing tenses and plurals for consistency between each headline. After that, we removed common stopwords from our data using a preset list of english stopwords. We used a count vectorizer to vectorize the words in our training dataset by the number of times each word appeared. We used a minimum frequency of 5, so the model ignored words that appeared less than 5 times throughout all the training headlines. In addition to word counts, we processed the headlines using a term frequency- inverse document frequency (TFIDF) matrix. This process assigns each word in a headline a frequency proportional to number of times it appears in a headline and the number of headlines the word appears in.
+Below are some visualizations of the pre-processing steps we took for our logistic regression model.
 
 #### Porter Stemmer and Count Vectorizer
 
@@ -65,21 +64,6 @@ To preprocess our data, we tokenized and stemmed each headline. This process spl
 <div align="center"><img src="./visualizations/VectorizeExample.PNG" alt="Example Vectorization"/></div>
 <div align="center"> Each row is a headline, each column is a word in our vocabulary, and each entry represent the count of the word in the news headline. </div>
 
-#### CO-O Matrix
-
-|          | Develop  | Area | Order | Host | Square | Computer | Statement | Said | Company | Production |
-|----------|----------|------|-------|------|--------|----------|-----------|------|---------|------------|
-|Develop   | 1        | 1    | 0     | 0    | 0      | 0        | 0         | 0    | 0       | 0          |
-|Area      | 1        | 1    | 0     | 0    | 0      | 0        | 0         | 0    | 0       | 0          |
-|Order     | 0        | 0    | 1     | 1    | 1      | 0        | 0         | 0    | 0       | 0          |
-|Host      | 0        | 0    | 1     | 1    | 1      | 1        | 0         | 0    | 0       | 0          |
-|Square    | 0        | 0    | 1     | 0    | 1      | 0        | 0         | 0    | 0       | 0          |
-|Computer  | 0        | 0    | 0     | 1    | 0      | 1        | 0         | 0    | 0       | 0          |
-|Statement | 0        | 0    | 0     | 0    | 0      | 0        | 1         | 1    | 0       | 0          |
-|Said      | 0        | 0    | 0     | 0    | 0      | 0        | 1         | 1    | 0       | 0          |
-|Company   | 0        | 0    | 0     | 0    | 0      | 0        | 0         | 0    | 2       | 0          |
-|Production| 0        | 0    | 0     | 0    | 0      | 0        | 0         | 0    | 0       | 1          |
-
 #### TF-IDF Matrix
 
 |          | accord | area | compani | comput | develop | gran | grow |
@@ -87,9 +71,9 @@ To preprocess our data, we tokenized and stemmed each headline. This process spl
 |Sentence 1|  0.342369 | 0 | **0.48719673** | 0 | 0 | 0.342369 | 0.342369 | 
 |Sentence 2|  0 | 0.24244659 | **0.17250275** | 0.24244659 | 0.24244659 | 0 | 0 |
 
+<div align="center"> TF-IDF matrix weighting the first few words of the corpus in our dataset</div>
 
 #### Model
-
 To create our model, we used 80 percent of our data to train on the logistic regression function provided by sklearn. We ran a 5-fold cross validation algorithm on our model trained with several different regularization level. We were able to achieve the best accuracy results of 70 percent with an inverse regularization value of 0.26.
 
 <div align="center"><img src="./visualizations/accuracy_vs_regularization.png" alt="accuracy_vs_regularization"/></div>
@@ -105,7 +89,6 @@ We compared the number of correctly classified financial news headlines with the
 <div align="center"><img src="./visualizations/positive.png" alt="positive words"/></div>
 
 ### Discussion
-
 We believe the relativley low accuracy of the logistic regression model can be attributed to a relativley low sample size and the majority of the dataset being classified neutral. In particulaur, the logisitc regressions may have suffered as the training set produced a vocab of only 1605 words meaning many of the words that appeared in the test set headlines may have been unknown to the model and therefore lost information.
 
 ## Convolutional Neural Network
@@ -171,7 +154,7 @@ Below are the visualizations that plot the loss and the accuracy versus epochs d
 ### Discussion
 The LSTM model consistently had above a 72% accuracy, indicating the effectiveness of Recurrent Neural Networks in improving upon NLP tasks due to its natural recurrent and sequential nature. However, we speculate that the LSTM model may not be extremely effective in this dataset due to the fact that the lengths of the headlines are much short, at a maximum sequence length of only 47. Thus, the LSTM may have a negligible effect on improving the dataset compared to solely using Recurrent Neural Networks.
 
-## Comparing our models
+## Conclusion / Comparing our models
 
 The CNN model drastically improved upon the results of the logistic regression, as we were able to achieve above a 70% accuracy for our model. The model converged fast and trained fast, requiring only about 12 epochs on average to train. The model generalized well, and the convolutions over the word embeddings of our model proved to be able to capture contextual and semantic information that aided in predicting the sentiment of each data point.
 
