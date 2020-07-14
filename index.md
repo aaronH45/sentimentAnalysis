@@ -52,8 +52,7 @@ To explain preprocessing, the first two sentences in the dataset are used:
 2. Technopolis plans to develop in stages an area of no less than 100,000 square meters in order to host companies working in computer technologies and telecommunications, the statement said.
 
 To preprocess our data, we first took care of stemming--removing word endings resulted from different tenses and word plurality.  Then we removed common stopwords from our news data set. Then we used a count vectorizer to vectorize the words in our dataset by their counts: Each news headline will be a row and each word in our vocabulary will be a column; the vocabulary is the set of words left after stemming and stopwords removal.
-<div align="center"><img src="./visualizations/VectorizeExample.PNG" alt="Example Vectorization"/></div>
-<div align="center"> Each row is a headline, each column is a word in our vocabulary, and each entry represent the count of the word in the news headline. </div>
+
 #### Porter Stemmer and Count Vectorizer
 
 |Before|Porter Stemmer|After|Count Vectorizer|Key|
@@ -80,6 +79,9 @@ To preprocess our data, we first took care of stemming--removing word endings re
 |company|⭢|compani|⭢|1826|
 |is|⭢|is|⭢|N/A|
 |growing|⭢|grow|⭢|3244|
+
+<div align="center"><img src="./visualizations/VectorizeExample.PNG" alt="Example Vectorization"/></div>
+<div align="center"> Each row is a headline, each column is a word in our vocabulary, and each entry represent the count of the word in the news headline. </div>
 
 #### CO-O Matrix
 
