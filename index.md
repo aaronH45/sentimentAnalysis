@@ -47,11 +47,8 @@ The graph below indicates the distribution of labels. Due to the unbalanced natu
 ## Multinomial Logistic Regression
 
 ### Pre-processing
-To explain preprocessing, the first two sentences in the dataset are used:
-1. According to Gran, the company has no plans to move all production to Russia, although that is where the company is growing.
-2. Technopolis plans to develop in stages an area of no less than 100,000 square meters in order to host companies working in computer technologies and telecommunications, the statement said.
 
-To preprocess our data, we first took care of stemming--removing word endings resulted from different tenses and word plurality.  Then we removed common stopwords from our news data set. Then we used a count vectorizer to vectorize the words in our dataset by their counts: Each news headline will be a row and each word in our vocabulary will be a column; the vocabulary is the set of words left after stemming and stopwords removal.
+To preprocess our data, we tokenized and stemmed each headline. This process split the headlines into lists of root words, removing tenses and plurals for consistency between each headline. After that, we removed common stopwords from our data using a preset list of english stopwords. We used a count vectorizer to vectorize the words in our training dataset by the number of times each word appeared. We used a minimum frequency of 5, so the model ignored words that appeared less than 5 times throughout all the training headlines. In addition to word counts, we processed the headlines using a term frequency- inverse document frequency (TFIDF) matrix. This process assigns each word in a headline a frequency proportional to number of times it appears in a headline and the number of headlines the word appears in.
 
 #### Porter Stemmer and Count Vectorizer
 
@@ -62,23 +59,8 @@ To preprocess our data, we first took care of stemming--removing word endings re
 |Gran|⭢|gran|⭢|3211|
 |the|⭢|the|⭢|N/A|
 |company|⭢|compani|⭢|1826|
-|has|⭢|ha|⭢|3270|
-|no|⭢|no|⭢|N/A|
-|plans|⭢|plan|⭢|5333|
-|to|⭢|accord|⭢|N/A|
-|move|⭢|move|⭢|N/A|
-|all|⭢|all|⭢|N/A|
-|production|⭢|product|⭢|5508|
-|to|⭢|to|⭢|N/A|
-|Russia|⭢|russia|⭢|6000|
-|although|⭢|although|⭢|N/A|
-|that|⭢|that|⭢|N/A|
-|is|⭢|is|⭢|N/A|
-|where|⭢|where|⭢|N/A|
-|the|⭢|the|⭢|N/A|
-|company|⭢|compani|⭢|1826|
-|is|⭢|is|⭢|N/A|
-|growing|⭢|grow|⭢|3244|
+
+<div align="center"> Example words being stemmed and stop words being removed </div>
 
 <div align="center"><img src="./visualizations/VectorizeExample.PNG" alt="Example Vectorization"/></div>
 <div align="center"> Each row is a headline, each column is a word in our vocabulary, and each entry represent the count of the word in the news headline. </div>
@@ -100,10 +82,11 @@ To preprocess our data, we first took care of stemming--removing word endings re
 
 #### TF-IDF Matrix
 
-|          | 000  | 100 | accord | area | compani | comput | develop | gran | grow | ha | host | meter | order | plan | product | russia | said | squar | stage | statement | technolog | technopoli | telecommun | work | 
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|Sentence 1| 0  | 0 | 0.342369 | 0 | **0.48719673** | 0 | 0 | 0.342369 | 0.342369 | 0.342369 | 0 | 0 | 0 | **0.24359836** | 0.342369 | 0.342369 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  
-|Sentence 2| 0.24244659  | 0.24244659 | 0 | 0.24244659 | **0.17250275** | 0.24244659 | 0.24244659 | 0 | 0 | 0 | 0.24244659 | 0.24244659 | 0.24244659 | **0.17250275** | 0 | 0 | 0.24244659  | 0.24244659  | 0.24244659 | 0.24244659  | 0.24244659  | 0.24244659  | 0.24244659 | 0.24244659  |  
+|          | accord | area | compani | comput | develop | gran | grow |
+|---|---|---|---|---|---|---|---|
+|Sentence 1|  0.342369 | 0 | **0.48719673** | 0 | 0 | 0.342369 | 0.342369 | 
+|Sentence 2|  0 | 0.24244659 | **0.17250275** | 0.24244659 | 0.24244659 | 0 | 0 |
+
 
 #### Model
 
@@ -113,8 +96,14 @@ To create our model, we used 80 percent of our data to train on the logistic reg
 <div align="center"> Showing how mean cross validation accuracy changes as inverse regularization in logistic regression changes </div>
 
 ### Results
+We compared the number of correctly classified financial news headlines with the total number of the test set. Our model predicted of 33% on the test data using term counts. When the headlines were processed with TFIDF, we saw a slight increase in the accuracy to 36%. Below we charted the 25 most positivley and negativley influential words for each sentiment. 
+<div align="center"><img src="./visualizations/neutral.png" alt="neutral words"/></div>
+<div align="center"><img src="./visualizations/negative.png" alt="negative words"/></div>
+<div align="center"><img src="./visualizations/positive.png" alt="positive words"/></div>
 
 ### Discussion
+
+We believe the relativley low accuracy of the logistic regression model can be attributed to a relativley low sample size and the majority of the dataset being classified neutral. In particulaur, the logisitc regressions may have suffered as the training set produced a vocab of only 1605 words meaning many of the words that appeared in the test set headlines may have been unknown to the model and therefore lost information.
 
 ## Convolutional Neural Network
 
