@@ -129,8 +129,8 @@ After pre-processing, the dataset becomes an input of Nx50x300, in which N is th
 
 |          | 000  | 100 | accord | area | compani | comput | develop | gran | grow | ha | host | meter | order | plan | product | russia | said | squar | stage | statement | technolog | technopoli | telecommun | work | 
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|Sentence 1| 0  | 0 | 0.342369 | 0 | 0.48719673 | 0 | 0 | 0.342369 | 0.342369 | 0.342369 | 0 | 0 | 0 | 0.24359836 | 0.342369 | 0.342369 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  
-|Sentence 2| 0.24244659  | 0.24244659 | 0 | 0.24244659 | 0.17250275 | 0.24244659 | 0.24244659 | 0 | 0 | 0 | 0.24244659 | 0.24244659 | 0.24244659 | 0.17250275 | 0 | 0 | 0.24244659  | 0.24244659  | 0.24244659 | 0.24244659  | 0.24244659  | 0.24244659  | 0.24244659 | 0.24244659  |  
+|Sentence 1| 0  | 0 | 0.342369 | 0 | **0.48719673** | 0 | 0 | 0.342369 | 0.342369 | 0.342369 | 0 | 0 | 0 | **0.24359836** | 0.342369 | 0.342369 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  
+|Sentence 2| 0.24244659  | 0.24244659 | 0 | 0.24244659 | **0.17250275** | 0.24244659 | 0.24244659 | 0 | 0 | 0 | 0.24244659 | 0.24244659 | 0.24244659 | **0.17250275** | 0 | 0 | 0.24244659  | 0.24244659  | 0.24244659 | 0.24244659  | 0.24244659  | 0.24244659  | 0.24244659 | 0.24244659  |  
 
 ### Model
 For our model, we used the Keras library with TensorFlow backend. As with our other models, it was written in a Jupyter notebook in Google Colab, which are all available on the github repository.
